@@ -1,18 +1,22 @@
 import React from "react";
-import { Link } from "react-router";
+import Header from "../components/Header";
+import Form from "../components/questions/Form"
 
 
 export default class Layout extends React.Component {
-  render() {
 
-      return (
-      <div>
-          {this.props.children}
-          <h1>Killer News</h1>
-          <Link to="archives" ><button class="btn btn-success">Archives</button></Link>
-          <Link to="settings">Settings</Link>
-      </div>
+    render() {
+        const konsult = "Ludwig";
 
-    );
-  }
+        return (
+            <div>
+                <Header konsult={konsult}></Header>
+                <div class="container">
+                    {this.props.children}
+                    <Form></Form>
+                </div>
+            </div>
+
+        );
+    }
 }
