@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../components/Menu"
+import Form from "../components/questions/Form"
 
 
 export default class Questions extends React.Component {
@@ -10,10 +10,13 @@ export default class Questions extends React.Component {
         const { article } = params;
         const {date, filter} = query;
 
+        const fStyle = { backgroundColor: "#D5ABB4", textAlign: "center"};
+
         return (
-            <div>
-                <h1>Questions ({article})</h1>
-                <Menu></Menu>
+            <div style={fStyle}>
+                <h1>Questions</h1>
+                
+                <Form></Form>
                 
             </div>
         );

@@ -3,12 +3,12 @@
  */
 import React from "react";
 
-export default class Title extends React.Component {
+export default class Question extends React.Component {
 
     render() {
         return (
             <div>
-
+                
             </div>
         );
     }

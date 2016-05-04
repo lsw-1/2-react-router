@@ -3,7 +3,7 @@
  */
 import React from "react";
 
-export default class Title extends React.Component {
+export default class Section extends React.Component {
 
     render() {
         return (
