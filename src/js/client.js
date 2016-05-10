@@ -2,9 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Router, Route, IndexRoute, hashHistory} from "react-router";
 import Layout from "./pages/Layout";
-import Questions from "./pages/Questions";
-import Responses from "./pages/Responses";
-import Bootstrap from "./vendor/bootstrap-without-jquery.min"
+import Questions from "./pages/QuestionsPage";
+import Responses from "./pages/ResponsesPage";
 
 const app = document.getElementById('app');
 
@@ -15,4 +14,5 @@ ReactDOM.render(
             <Route path="responses" component={Responses}></Route>
         </Route>
     </Router>, app);
-    
+
+

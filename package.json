@@ -19,7 +19,10 @@
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "eslint-plugin-react": "^5.1.1"
+  },
   "scripts": {
     "dev": "webpack-dev-server --content-base src --inline --hot"
   },

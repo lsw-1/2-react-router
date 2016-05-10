@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../components/questions/Form"
+import Form from "../components/Form"
 
 
 export default class Questions extends React.Component {
@@ -14,9 +14,8 @@ export default class Questions extends React.Component {
 
         return (
             <div style={fStyle}>
-                <h1>Questions</h1>
-                
-                <Form></Form>
+                <h1>Questions</h1>                
+                <Form></Form>                   
                 
             </div>
         );
