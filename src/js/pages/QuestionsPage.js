@@ -1,22 +1,18 @@
 import React from "react";
-import Form from "../components/Form"
+import Form from "../components/Form";
 
 
 export default class Questions extends React.Component {
     render() {
-        const {query} = this.props.location;
-        console.log(this.props);
-        const { params } = this.props;
-        const { article } = params;
-        const {date, filter} = query;
 
-        const fStyle = { backgroundColor: "#D5ABB4", textAlign: "center"};
+        const questionsStyle = {
+          height: "100%"
+        };
 
         return (
-            <div style={fStyle}>
-                <h1>Questions</h1>                
-                <Form></Form>                   
-                
+            <div style={questionsStyle}>
+                <h1>Questions</h1>
+                <Form></Form>
             </div>
         );
     }

@@ -7,13 +7,15 @@ import React from "react";
 export default class Footer extends React.Component {
 
     render() {
-        const fStyle = {
-            backgroundColor: "#D5ABB4",
-            textAlign: "center"
+        const footerComponentStyle = {
+            backgroundColor: "black",
+            textAlign: "center",
+            minHeight: "150px",
+            bottom: "0px"
         };
 
         return (
-            <div class="footer" style={fStyle}>
+            <div class="footer" style={footerComponentStyle}>
                 <h2>Footer</h2>
             </div>
         );

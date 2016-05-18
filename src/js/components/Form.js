@@ -10,49 +10,52 @@ export default class Form extends React.Component {
         super();
         this.state = {
             editing: false,
-            formComponents: ["Title", "Question"]
-        }
-    };
-
-
-    render() {
-        const fStyle = {backgroundColor: "#D5ABB4", textAlign: "center"};
-
-        let fields = this.state.formComponents.map((component) => {
-            if (component === "Text") {
-                return <Text handleDelete={this._deleteField()} ></Text>
-            } else if (component === "Title") {
-                return <Title></Title>
-            } else if (component === "Question") {
-                return <Question></Question>
-            }
-        });
-
-
-        return (
-            <div style={fStyle}>
-                <ul class="column">
-                    <button class="btn" onClick={() => this._addField("Text")}>Add Text</button>
-                    <button class="btn" onClick={() => this._addField("Question")}>Add Question</button>
-                    <button class="btn" onClick={() => this._addField("Text")}>Add Section</button>
-                </ul>
-                {fields}
-            </div>
-        );
+            formComponents: ["Question"]
+        };
     }
-
 
     _addField(type) {
         this.setState({
-                formComponents: this.state.formComponents.concat(type)
+            formComponents: this.state.formComponents.concat(type)
+                    , id: this.state.id + 1
+        });
+            console.log(this.state.id)
+    }
+
+    _deleteField(formField) {
+        const formComponents = [...this.state.formComponents];
+        formComponents.splice(formField, 1);
+        this.setState({formComponents});
+    }
+
+
+    render() {
+        const formComponentStyle = {
+            backgroundColor: "" 
+        };
+
+        let formattedFormFields = this.state.formComponents.map((component, i) => {
+            if (component === "Text") {
+                return <Text
+                    key={i}
+                    id={i}
+                    onDelete={this._deleteField.bind(this)}/>;
+            } else if (component === "Question") {
+                return <Question
+                    key={i}
+                    id={i}
+                    onDelete={this._deleteField.bind(this)}/>
             }
+        });
+
+        return( <div class="card" style={formComponentStyle}>
+                < ul class=" bg-inverse nav-bar">
+                    < button class="btn" onClick={() => this._addField("Text")}> Add Text</button>
+                    < button class="btn" onClick={() => this._addField("Question")}> Add Question</button>
+                </ul>
+                <Title/>
+                {formattedFormFields}
+            </div>
         )
     }
-
-    _deleteField(evt){
-        let currentObject = evt.target.value;
-        console.log(currentObject)
-    }
-
 }
-

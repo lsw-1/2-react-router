@@ -11,13 +11,11 @@ export default class Title extends React.Component {
             title: "Title"
         }
     }
-    //TODO:2. select input element
 
-    toggleEditing(){
-        console.log(this.state.editing);
-        const editing = !this.state.editing;
-        this.setState({editing});
-        
+   _toggleEditing(){
+           console.log(this.state.editing);
+           const editing = !this.state.editing;
+           this.setState({editing});
 
     }
 
@@ -29,21 +27,23 @@ export default class Title extends React.Component {
 
 
     render() {
-        const fStyle = {backgroundColor: "#CDCDA6", textAlign: "center", marginTop: "10px"};
+        const titleComponentStyle = {backgroundColor: "#", marginTop: "10px"};
 
-        let textfield;
+        let textField;
 
         if(this.state.editing){
-            textfield = <input id="some" onClick={this.toggleEditing.bind(this)} type="text" placeholder="Title" onChange={this.handleChange.bind(this)} />
+            textField =[
+                <input class="form-control" type="text" placeholder="Title" onChange={this.handleChange.bind(this)} />,
+                <button class="btn" onClick={this._toggleEditing.bind(this)}>Edit</button>]
         } else {
-            textfield = <h1 onClick={this.toggleEditing.bind(this)}>{this.state.title}</h1>
+            textField = <h1 onClick={this._toggleEditing.bind(this)}>{this.state.title}</h1>
         }
 
 
         return (
 
-            <div style={fStyle}>
-                {textfield}
+            <div style={titleComponentStyle}>
+                {textField}
             </div>
         );
     }
